@@ -14,7 +14,10 @@ class Test:
         driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.EMAIL_USER)
         driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.PASSWORD)
         driver.find_element(*Locators.LOG_IN_BUTTON).click()
-        assert WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ACCOUNT_BUTTON)).click()
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.NAME_IN_ACCOUNT))
+        value = driver.find_element(*Locators.NAME_IN_ACCOUNT).get_attribute('value')
+        assert Constants.NAME_USER in value
 
     # Проверяем вход в аккаунт по кнопке "Личный кабинет" на главной странице
     def test_login_by_account(self, driver):
@@ -24,7 +27,10 @@ class Test:
         driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.EMAIL_USER)
         driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.PASSWORD)
         driver.find_element(*Locators.LOG_IN_BUTTON).click()
-        assert WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ACCOUNT_BUTTON)).click()
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.NAME_IN_ACCOUNT))
+        value = driver.find_element(*Locators.NAME_IN_ACCOUNT).get_attribute('value')
+        assert Constants.NAME_USER in value
 
     # Проверяем вход в аккаунт через кнопку в форме регистрации
     def test_login_by_button_in_registration_form(self, driver):
@@ -39,7 +45,10 @@ class Test:
         driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.EMAIL_USER)
         driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.PASSWORD)
         driver.find_element(*Locators.LOG_IN_BUTTON).click()
-        assert WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ACCOUNT_BUTTON)).click()
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.NAME_IN_ACCOUNT))
+        value = driver.find_element(*Locators.NAME_IN_ACCOUNT).get_attribute('value')
+        assert Constants.NAME_USER in value
 
     # Проверяем вход через кнопку в форме восстановления пароля
     def test_login_by_password_recovery(self, driver):
@@ -54,4 +63,7 @@ class Test:
         driver.find_element(*Locators.EMAIL_FIELD_LOG).send_keys(Constants.EMAIL_USER)
         driver.find_element(*Locators.PASSWORD_FIELD_LOG).send_keys(Constants.PASSWORD)
         driver.find_element(*Locators.LOG_IN_BUTTON).click()
-        assert WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ORDER_BUTTON))
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.ACCOUNT_BUTTON)).click()
+        WebDriverWait(driver, 3).until(EC.visibility_of_element_located(Locators.NAME_IN_ACCOUNT))
+        value = driver.find_element(*Locators.NAME_IN_ACCOUNT).get_attribute('value')
+        assert Constants.NAME_USER in value

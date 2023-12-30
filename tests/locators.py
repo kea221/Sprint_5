@@ -18,8 +18,7 @@ class Locators:
     ERROR_MESSAGE = (By.XPATH, "//p[@class='input__error text_type_main-default']")
 
     # LOGIN_FORM - форма для входа с полями Email и Пароль
-    # LOGIN_FORM = (By.XPATH, "//form[@class='Auth_form__3qKeq mb-20']")
-    LOGIN_FORM = (By.CSS_SELECTOR, ".App_App__aOmNj")
+    LOGIN_FORM = (By.XPATH, "//h2[text()='Вход']/following-sibling::form[@class='Auth_form__3qKeq mb-20']")
     # EMAIL_FIELD_LOG - поле ввода Email в форме для входа
     EMAIL_FIELD_LOG = (By.XPATH, "//input[@name='name']")
     # PASSWORD_FIELD_LOG - поле ввода Пароля в форме для входа
